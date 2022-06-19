@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravue3\Stateless;
+namespace Laravue3\Authentication;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,8 +19,8 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // $request->session()->regenerate();
-            $user = \Auth::user();
+
+            $user = Auth::user();
             $token = $user->createToken('auth');
             $cookie = cookie('tks', json_encode($token));
 
@@ -32,6 +32,25 @@ class LoginController extends Controller
         return response('', 401);
     }
 
+    public function getTokenWithPassword(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            $token = $user->createToken('auth');
+            // $cookie = cookie('tks', json_encode($token));
+
+            return response([
+                'tks' => $token,
+                'user' => $user
+            ], 200);
+        }
+
+        return response('', 401);
+
+    }
+
     public function logout(Request $request)
     {
         $tksCookie = $request->cookie('tks');
@@ -39,9 +58,5 @@ class LoginController extends Controller
         if (is_null($tks)) {
             abort(401);
         }
-        // \Log::info($tks);
-        // trouver le user avec ce token
-        // $personalToken = PersonalAccessToken::findToken($tks->plainTextToken);
-        // $personalToken->delete();
     }
 }

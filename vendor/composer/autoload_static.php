@@ -49,6 +49,7 @@ class ComposerStaticInita760a28875402fd388b7d6f95608876c
         ),
         'W' => 
         array (
+            'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
         'T' => 
@@ -110,6 +111,10 @@ class ComposerStaticInita760a28875402fd388b7d6f95608876c
         array (
             'Orchestra\\Testbench\\' => 20,
         ),
+        'N' => 
+        array (
+            'NunoMaduro\\Collision\\' => 21,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -138,6 +143,7 @@ class ComposerStaticInita760a28875402fd388b7d6f95608876c
         array (
             'Fruitcake\\Cors\\' => 15,
             'Faker\\' => 6,
+            'Facade\\IgnitionContracts\\' => 25,
         ),
         'E' => 
         array (
@@ -185,6 +191,10 @@ class ComposerStaticInita760a28875402fd388b7d6f95608876c
         'ZBateson\\MailMimeParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/zbateson/mail-mime-parser/src',
+        ),
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -367,6 +377,10 @@ class ComposerStaticInita760a28875402fd388b7d6f95608876c
         array (
             0 => __DIR__ . '/..' . '/orchestra/testbench-core/src',
         ),
+        'NunoMaduro\\Collision\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -424,6 +438,10 @@ class ComposerStaticInita760a28875402fd388b7d6f95608876c
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
+        ),
+        'Facade\\IgnitionContracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facade/ignition-contracts/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (

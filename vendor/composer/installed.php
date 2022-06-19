@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '646284a7bae2a318e99432df465236e9981bf264',
     'name' => 'laravue3/stateless',
   ),
   'versions' => 
@@ -88,6 +88,15 @@
       ),
       'reference' => 'ee0db30118f661fb166bcffbf5d82032df484697',
     ),
+    'facade/ignition-contracts' => 
+    array (
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
+    ),
     'fakerphp/faker' => 
     array (
       'pretty_version' => 'v1.19.0',
@@ -96,6 +105,15 @@
       array (
       ),
       'reference' => 'd7f08a622b3346766325488aa32ddc93ccdecc75',
+    ),
+    'filp/whoops' => 
+    array (
+      'pretty_version' => '2.14.5',
+      'version' => '2.14.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a63e5e8f26ebbebf8ed3c5c691637325512eb0dc',
     ),
     'fruitcake/php-cors' => 
     array (
@@ -384,12 +402,12 @@
     ),
     'laravue3/stateless' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '646284a7bae2a318e99432df465236e9981bf264',
     ),
     'league/commonmark' => 
     array (
@@ -496,6 +514,15 @@
       array (
       ),
       'reference' => '210577fe3cf7badcc5814d99455df46564f3c077',
+    ),
+    'nunomaduro/collision' => 
+    array (
+      'pretty_version' => 'v6.2.0',
+      'version' => '6.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c379636dc50e829edb3a8bcb944a01aa1aed8f25',
     ),
     'orchestra/testbench' => 
     array (
