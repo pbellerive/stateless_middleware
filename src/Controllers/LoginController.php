@@ -1,13 +1,19 @@
 <?php
 
-namespace Laravue3\Authentication;
+namespace Laravue3\Stateless\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
 
-class LoginController extends Controller
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
+
+
+class LoginController extends BaseController
 {
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     /**
      * Handle an authentication attempt.
      *
