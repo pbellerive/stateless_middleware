@@ -65,4 +65,9 @@ class LoginController extends BaseController
             abort(401);
         }
     }
+
+    public function checkLogin()
+    {
+        return response();
+    }
 }
