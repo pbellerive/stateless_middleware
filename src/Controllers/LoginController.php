@@ -68,6 +68,6 @@ class LoginController extends BaseController
 
     public function checkLogin()
     {
-        return response();
+        return response('');
     }
 }
