@@ -13,11 +13,12 @@ class StatelessServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/config/stateless.php' => config_path('stateless.php')
+        ], 'stateless-config');
+
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
-        $this->publishes([
-            __DIR__.'/../config/stateless.php' => config_path('stateless.php')
-        ], 'stateless-config');
 
     }
 }
