@@ -26,7 +26,7 @@ class LoginControllerTest extends TestCase
 
     }
 
-    public function test_login()
+    public function test_login_happy_path()
     {
         $this->withoutExceptionHandling();
 
@@ -50,6 +50,29 @@ class LoginControllerTest extends TestCase
         $this->assertTrue(\Auth::id() == $user->id);
     }
 
+
+    public function test_login_wrong_password()
+    {
+        $this->withoutExceptionHandling();
+
+        $this->loadLaravelMigrations();
+        $this->artisan('migrate:refresh', ['--database' => 'testbench'])->run();
+
+
+        Route::post('/api/login', '\Laravue3\Stateless\Controllers\LoginController@authenticate');
+        $user = User::create([
+            'name' => 'test',
+            'email' => 'test@email.com',
+            'password' => password_hash('123456', PASSWORD_BCRYPT)
+        ]);
+
+        $response = $this->post('/api/login', [
+            'email' => 'test@email.com',
+            'password' => '1234567'
+        ]);
+
+        $response->assertStatus(401);
+    }
     // public function test_authenticate_with_cookie_when_route_is_protected()
     // {
     //     $this->loadLaravelMigrations();
