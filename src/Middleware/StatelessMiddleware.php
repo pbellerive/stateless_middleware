@@ -27,8 +27,6 @@ class StatelessMiddleware
         $tksCookie = $request->cookie('tks');
         $tks = json_decode($tksCookie);
 
-        var_dump('**************************');
-        var_dump($tksCookie);
         // got a token ?
         if (!is_null($tks)) {
             $personalToken = PersonalToken::findToken($tks->plainTextToken);
