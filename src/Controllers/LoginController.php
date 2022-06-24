@@ -68,6 +68,6 @@ class LoginController extends BaseController
 
     public function checkLogin()
     {
-        return response('', Auth::user());
+        return response(Auth::user());
     }
 }
