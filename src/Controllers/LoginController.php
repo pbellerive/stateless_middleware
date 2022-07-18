@@ -47,6 +47,11 @@ class LoginController extends BaseController
             $token = $user->createToken('auth');
             // $cookie = cookie('tks', json_encode($token));
 
+            if (config('stateless.resourceClass')) {
+                $resource = config('stateless.resourceClass');
+                $user = new $resource($user);
+            }
+
             return response([
                 'tks' => $token,
                 'user' => $user
@@ -72,6 +77,12 @@ class LoginController extends BaseController
 
     public function checkLogin()
     {
-        return response(Auth::user());
+        $user = Auth::user();
+        if (config('stateless.resourceClass')) {
+            $resource = config('stateless.resourceClass');
+            $user = new $resource($user);
+        }
+
+        return response($user);
     }
 }

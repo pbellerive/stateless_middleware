@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'userModel' => App\Models\User::class
+    'userModel' => App\Models\User::class,
+    'resourceClass' => null
 ];
