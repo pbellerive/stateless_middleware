@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-
+use Laravue3\Stateless\PersonalToken;
 
 class LoginController extends BaseController
 {
@@ -61,9 +61,13 @@ class LoginController extends BaseController
     {
         $tksCookie = $request->cookie('tks');
         $tks = json_decode($tksCookie);
+
         if (is_null($tks)) {
             abort(401);
         }
+
+        $personalToken = PersonalToken::findToken($tks->plainTextToken);
+        $personalToken->delete();
     }
 
     public function checkLogin()
