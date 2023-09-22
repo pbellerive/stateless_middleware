@@ -13,7 +13,9 @@ use Laravue3\Stateless\PersonalToken;
 
 class LoginController extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequests;
     /**
      * Handle an authentication attempt.
      *
@@ -29,6 +31,12 @@ class LoginController extends BaseController
             $user = Auth::user();
             $token = $user->createToken('auth');
             $cookie = cookie('tks', json_encode($token));
+
+
+            if (config('stateless.resourceClass')) {
+                $resource = config('stateless.resourceClass');
+                $user = new $resource($user);
+            }
 
             return response([
                 'user' => $user
